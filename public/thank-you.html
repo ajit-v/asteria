@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./style/firstSection.css" />
     <link rel="stylesheet" href="./style/registerModal.css" />
     <link rel="stylesheet" href="./style/index.css" />
+    <link rel="icon" href="/public/assets/favicon/favicon.ico">
 
     <link rel="stylesheet" href="./style/footer.css" />
     <!-- <script src="./js/index.js" defer></script> -->
@@ -465,6 +466,31 @@
 
         // Run the function on page load
         window.onload = populateUTMFields;
+        function validateForm() {
+    const name = document.forms["PopupForm"]["name"].value.trim();
+    const email = document.forms["PopupForm"]["email"].value.trim();
+    const mobile = document.forms["PopupForm"]["mobile"].value.trim();
+    const countryCode = document.forms["PopupForm"]["CountryCode"].value;
+    const agree = document.forms["PopupForm"]["agree"].checked;
+
+    if (name === "" || email === "" || mobile === "" || countryCode === "") {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+
+    if (!agree) {
+      alert("Please agree to receive updates.");
+      return false;
+    }
+
+    const phoneRegex = /^[0-9]{6,15}$/;
+    if (!phoneRegex.test(mobile)) {
+      alert("Please enter a valid mobile number.");
+      return false;
+    }
+
+    return true;
+  }
     </script>
 
 
