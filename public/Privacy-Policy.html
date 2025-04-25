@@ -74,10 +74,18 @@
             letter-spacing: 1px;
             font-weight: 600;
         }
+
+        @media only screen and (max-width: 746px) {
+            p {
+                text-align: justify;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
     </style>
 
     <style>
-         @keyframes fadeInUp {
+        @keyframes fadeInUp {
             0% {
                 opacity: 0;
                 transform: translateY(80px);
@@ -94,17 +102,17 @@
             }
         }
 
-        .fade-in-up {
+        /* .fade-in-up {
             opacity: 0;
             transform: translateY(80px);
             transition: all 0.3s ease-out;
-        }
+        } */
 
         .fade-in-up.active {
             animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
-    
+
 
 </head>
 
@@ -409,10 +417,12 @@
                 <div class="amm" style="margin-top:8%;">
                     <span class=" introbase fade-in-up">PRIVACY POLICY</span>
                 </div>
-                <p class="privacyText fade-in-up">Royalti Real Estate Private Limited ("we," "our," or "us") is committed to
+                <p class="privacyText fade-in-up">Royalti Real Estate Private Limited ("we," "our," or "us") is
+                    committed to
                     protecting your privacy. This Privacy Policy explains how your personal information is collected,
                     used, and disclosed by Royalti Real Estate Private Limited.</p>
-                <p class="privacyText fade-in-up">This Privacy Policy applies to our website, and its associated subdomains
+                <p class="privacyText fade-in-up">This Privacy Policy applies to our website, and its associated
+                    subdomains
                     (collectively, our "Service") alongside our application, Royalti Real Estate Private Limited. By
                     accessing or using our Service, you signify that you have read, understood, and agree to our
                     collection, storage, use, and disclosure of your personal information as described in this Privacy
@@ -420,7 +430,8 @@
                 <p class="privacyText fade-in-up">
                     <br>
                     <b>Definitions and Key Terms</b>
-                <p class="privacyText fade-in-up">To help explain things as clearly as possible in this Privacy Policy, every time
+                <p class="privacyText fade-in-up">To help explain things as clearly as possible in this Privacy Policy,
+                    every time
                     any of these terms are referenced, are strictly defined as:</p>
                 </p>
                 <ul id="bullets">
@@ -796,7 +807,8 @@
                         personal data.</li>
                 </ul>
                 </p>
-                <p class="privacyText fade-in-up"><br>If you make a request, we have one month to respond to you. If you would like
+                <p class="privacyText fade-in-up"><br>If you make a request, we have one month to respond to you. If you
+                    would like
                     to exercise any of these rights, please contact us. We do not sell the Personal Information of our
                     users. For more information about these rights, please contact us.
                 </p>
@@ -829,23 +841,23 @@
     </div>
     <script>
         const faders = document.querySelectorAll('.fade-in-up');
-      
+
         const appearOptions = {
-          threshold: 0.1
+            threshold: 0.1
         };
-      
+
         const appearOnScroll = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // optional: run once
-          });
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // optional: run once
+            });
         }, appearOptions);
-      
+
         faders.forEach(fader => {
-          appearOnScroll.observe(fader);
+            appearOnScroll.observe(fader);
         });
-      </script>
+    </script>
 
 
     <script>
@@ -909,30 +921,30 @@
         window.onload = populateUTMFields;
 
         function validateForm() {
-    const name = document.forms["PopupForm"]["name"].value.trim();
-    const email = document.forms["PopupForm"]["email"].value.trim();
-    const mobile = document.forms["PopupForm"]["mobile"].value.trim();
-    const countryCode = document.forms["PopupForm"]["CountryCode"].value;
-    const agree = document.forms["PopupForm"]["agree"].checked;
+            const name = document.forms["PopupForm"]["name"].value.trim();
+            const email = document.forms["PopupForm"]["email"].value.trim();
+            const mobile = document.forms["PopupForm"]["mobile"].value.trim();
+            const countryCode = document.forms["PopupForm"]["CountryCode"].value;
+            const agree = document.forms["PopupForm"]["agree"].checked;
 
-    if (name === "" || email === "" || mobile === "" || countryCode === "") {
-      alert("Please fill in all required fields.");
-      return false;
-    }
+            if (name === "" || email === "" || mobile === "" || countryCode === "") {
+                alert("Please fill in all required fields.");
+                return false;
+            }
 
-    if (!agree) {
-      alert("Please agree to receive updates.");
-      return false;
-    }
+            if (!agree) {
+                alert("Please agree to receive updates.");
+                return false;
+            }
 
-    const phoneRegex = /^[0-9]{6,15}$/;
-    if (!phoneRegex.test(mobile)) {
-      alert("Please enter a valid mobile number.");
-      return false;
-    }
+            const phoneRegex = /^[0-9]{6,15}$/;
+            if (!phoneRegex.test(mobile)) {
+                alert("Please enter a valid mobile number.");
+                return false;
+            }
 
-    return true;
-  }
+            return true;
+        }
     </script>
 
 

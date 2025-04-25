@@ -28,7 +28,7 @@
     margin-bottom: 50px;
 }
 
-.royalty-text p {
+.royalty-text {
     font-size: 16px;
     line-height: 1.6;
     color: #666;
@@ -99,9 +99,15 @@
         margin-bottom: 30px;
     }
 
-    .royalty-text p {
+    /* .royalty-text p {
         text-align: justify !important;
         font-size: 14px;
+    } */
+    .royalty-text {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 
     .royalty-card h3 {
@@ -123,6 +129,10 @@
             width: 100%;
             justify-content: space-around;
             align-items: baseline;
+    }
+    .footer {
+       
+        padding-bottom: 53px !important;
     }
 
     .royalty-card img {
