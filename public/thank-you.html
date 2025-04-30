@@ -27,7 +27,7 @@
                 .catch(err => console.warn('Error loading HTML:', err));
         }
 
-        includeHTML('header.html', 'header');
+        // includeHTML('header.html', 'header');
         includeHTML('footer.html', 'footer');
     </script>
     <style>
@@ -370,7 +370,45 @@
         </div>
     </div>
 
-    <div id="header"></div>
+    <header>
+        <nav class="custom-navbar" style="background: #ffffff;">
+            <a class="custom-navbar-brand" href="#">
+                <img src="./assets/logo.png" alt="Logo">
+            </a>
+
+            <button class="custom-menu-toggle" id="customMenuToggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+
+
+            <ul class="custom-navbar-links mx-auto" id="customNavbarLinks" style="font-size: 1vw;">
+                <li><a style="font-weight:600 ;" href="/#overview">OVERVIEW</a></li>
+                <li><a style="font-weight:600 ;" href="/#location">LOCATION</a></li>
+                <li><a style="font-weight:600 ;" href="/#amenities">AMENITIES</a></li>
+                <li><a style="font-weight:600 ;" href="/#variants">VARIANTS</a></li>
+                <li><a style="font-weight:600 ;" href="/#layouts">LAYOUTS</a></li>
+                <li><a style="font-weight:600 ;" href="/#int1">DEVELOPER</a></li>
+
+
+            </ul>
+
+
+            <div id="nav-call-btn" data-animation="fadeInUp" class="para-logo call-now-cnt register-hover"
+                data-bs-toggle="modal" data-bs-target="#registerModal" style="position: relative;
+    right: 5%;">
+                <i class="fa-sharp fa-solid fa-phone" style="display:block; ">
+                    <span style="    padding-bottom: 6px;
+    margin-left: 8px;"></i>CALL NOW</span>
+
+
+            </div>
+
+
+
+        </nav>
+    </header>
 
 
     <section id="overview" style="background-color: #fff;height:541px;">
@@ -467,30 +505,30 @@
         // Run the function on page load
         window.onload = populateUTMFields;
         function validateForm() {
-    const name = document.forms["PopupForm"]["name"].value.trim();
-    const email = document.forms["PopupForm"]["email"].value.trim();
-    const mobile = document.forms["PopupForm"]["mobile"].value.trim();
-    const countryCode = document.forms["PopupForm"]["CountryCode"].value;
-    const agree = document.forms["PopupForm"]["agree"].checked;
+            const name = document.forms["PopupForm"]["name"].value.trim();
+            const email = document.forms["PopupForm"]["email"].value.trim();
+            const mobile = document.forms["PopupForm"]["mobile"].value.trim();
+            const countryCode = document.forms["PopupForm"]["CountryCode"].value;
+            const agree = document.forms["PopupForm"]["agree"].checked;
 
-    if (name === "" || email === "" || mobile === "" || countryCode === "") {
-      alert("Please fill in all required fields.");
-      return false;
-    }
+            if (name === "" || email === "" || mobile === "" || countryCode === "") {
+                alert("Please fill in all required fields.");
+                return false;
+            }
 
-    if (!agree) {
-      alert("Please agree to receive updates.");
-      return false;
-    }
+            if (!agree) {
+                alert("Please agree to receive updates.");
+                return false;
+            }
 
-    const phoneRegex = /^[0-9]{6,15}$/;
-    if (!phoneRegex.test(mobile)) {
-      alert("Please enter a valid mobile number.");
-      return false;
-    }
+            const phoneRegex = /^[0-9]{6,15}$/;
+            if (!phoneRegex.test(mobile)) {
+                alert("Please enter a valid mobile number.");
+                return false;
+            }
 
-    return true;
-  }
+            return true;
+        }
     </script>
 
 

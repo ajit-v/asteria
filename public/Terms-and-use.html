@@ -19,17 +19,7 @@
 
     <link rel="stylesheet" href="./style/footer.css" />
     <!-- <script src="./js/index.js" defer></script> -->
-    <script>
-        function includeHTML(url, elementId) {
-            fetch(url)
-                .then(res => res.text())
-                .then(html => document.getElementById(elementId).innerHTML = html)
-                .catch(err => console.warn('Error loading HTML:', err));
-        }
-
-        includeHTML('header.html', 'header');
-        includeHTML('footer.html', 'footer');
-    </script>
+    
     <style>
         .privacyText {
             font-size: 14pt;
@@ -404,7 +394,45 @@
         </div>
     </div>
 
-    <div id="header"></div>
+    <header>
+        <nav class="custom-navbar" style="background: #ffffff;">
+            <a class="custom-navbar-brand" href="#">
+                <img src="./assets/logo.png" alt="Logo">
+            </a>
+
+            <button class="custom-menu-toggle" id="customMenuToggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+
+
+            <ul class="custom-navbar-links mx-auto" id="customNavbarLinks" style="font-size: 1vw;">
+                <li><a style="font-weight:600 ;" href="/#overview">OVERVIEW</a></li>
+                <li><a style="font-weight:600 ;" href="/#location">LOCATION</a></li>
+                <li><a style="font-weight:600 ;" href="/#amenities">AMENITIES</a></li>
+                <li><a style="font-weight:600 ;" href="/#variants">VARIANTS</a></li>
+                <li><a style="font-weight:600 ;" href="/#layouts">LAYOUTS</a></li>
+                <li><a style="font-weight:600 ;" href="/#int1">DEVELOPER</a></li>
+
+
+            </ul>
+
+
+            <div id="nav-call-btn" data-animation="fadeInUp" class="para-logo call-now-cnt register-hover"
+                data-bs-toggle="modal" data-bs-target="#registerModal" style="position: relative;
+    right: 5%;">
+                <i class="fa-sharp fa-solid fa-phone" style="display:block; ">
+                    <span style="    padding-bottom: 6px;
+    margin-left: 8px;"></i>CALL NOW</span>
+
+
+            </div>
+
+
+
+        </nav>
+    </header>
 
 
     <section id="privacyPolicy" style="background-color:#f2f2f2;;">
@@ -697,6 +725,16 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
+            function includeHTML(url, elementId) {
+                fetch(url)
+                    .then(res => res.text())
+                    .then(html => document.getElementById(elementId).innerHTML = html)
+                    .catch(err => console.warn('Error loading HTML:', err));
+            }
+    
+            // includeHTML('header.html', 'header');
+            includeHTML('footer.html', 'footer');
 
             const navbarLinks = document.querySelector("#customNavbarLinks");
             const menuToggle = document.querySelector("#customMenuToggle");
