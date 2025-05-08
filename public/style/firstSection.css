@@ -118,6 +118,7 @@
 #seperator {
     width: 2px;
     height: auto;
+    background: grey;
     border: 1px solid grey;
 }
 
